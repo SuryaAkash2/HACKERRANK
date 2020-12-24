@@ -1,10 +1,6 @@
 def MinimumX(a, b, c, k): 
-  
-    x = 10**9
-  
-    if (k <= c): 
-        return 0
-  
+    x = 10**9  
+    if (k <= c): return 0
     h = k - c 
     l = 0
     while (l <= h): 
@@ -12,13 +8,9 @@ def MinimumX(a, b, c, k):
         if ((a * m * m) + (b * m) > (k - c)): 
             x = min(x, m) 
             h = m - 1
-  
-        elif ((a * m * m) + (b * m) < (k - c)): 
-            l = m + 1
-        else: 
-            return m 
-    return x 
-  
+        elif ((a * m * m) + (b * m) < (k - c)): l = m + 1
+        else: return m 
+    return x  
 n = int(input())
 for i in range(n):
     a, b, c, k = list(map(int,input().strip().split(' ')))
